@@ -1,15 +1,15 @@
 FROM golang as builder
-COPY ./greetings.go ./greetings.go
+#COPY ./greetings.go ./greetings.go
 
-CMD ["sh", "-c", "go build ./greetings.go"]
+RUN sh -c "go get github.com/hikemachado/codeeducation/"
 
 FROM scratch
-COPY --from=builder /go/bin/greetings /greeetings
-ENTRYPOINT ["/greetings"]
+COPY --from=builder /go/bin/codeeducation .
+#COPY ./codeeducation .
+ENTRYPOINT ["/codeeducation"]
 
 
 
-docker run -v ${pwd}:/usr/src/code -w /usr/src/code  golang go build -v
 
 
 
