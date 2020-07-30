@@ -1,0 +1,3 @@
+FROM scratch
+COPY ./code .
+ENTRYPOINT ["/code"]docker login
