@@ -1,10 +1,10 @@
 steps:
-    - name: 'gcr.io/cloud-builders/go'
-      args: ['install', 'sum']
-      env: ['GOPATH=.']
-    - name: 'gcr.io/cloud-builders/go'
-      args: ['test', 'sum']
-      env: ['GOPATH=.']
-    - name: 'gcr.io/cloud-builders/docker'
-      args: ['build', '--tag=gcr.io/$PROJECT_ID/sum', '.']
-    images: ['gcr.io/$PROJECT_ID/sum']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['install', 'sum']
+  env: ['GOPATH=.']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['test', 'sum']
+  env: ['GOPATH=.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/sum', '.']
+images: ['gcr.io/$PROJECT_ID/sum']
