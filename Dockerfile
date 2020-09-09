@@ -1,5 +1,5 @@
 FROM scratch
 
-COPY bin/sum /sum
+COPY bin/sum /sum 
 
 ENTRYPOINT ["/sum"]
